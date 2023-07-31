@@ -10,6 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("images/background.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,9 +47,9 @@
                             Animals Wiki
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Lion</a></li>
-                            <li><a class="dropdown-item" href="#">Capybara</a></li>
-                            <li><a class="dropdown-item" href="#">Dog</a></li>
+                            <li><a class="dropdown-item" href="lion.html">Lion</a></li>
+                            <li><a class="dropdown-item" href="capybara.html">Capybara</a></li>
+                            <li><a class="dropdown-item" href="elephant.html">Elephant</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -52,18 +62,52 @@
     <div class="card" style="width: 18rem;">
         <img src="images/worker1.jpeg" class="card-img-top" alt="Worker Photo">
         <div class="card-body">
-          <h5 class="card-title">Now Hiring</h5>
-          <p class="card-text">We Are Looking For New People With Care And Patience For Animals.</p>
-          <a href="contact.html" class="btn btn-primary">Contact Details</a>
+            <h5 class="card-title">Now Hiring</h5>
+            <p class="card-text">We Are Looking For New People With Care And Patience For Animals.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Details</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
         <img src="images/worker2.jpeg" class="card-img-top" alt="Worker Photo">
         <div class="card-body">
-          <h5 class="card-title">Professionalism</h5>
-          <p class="card-text">Over 1,000,000 visits a month to John Bryce Zoo<br>Our experts know exactly what YOU want</p>
+            <h5 class="card-title">Professional Staff</h5>
+            <p class="card-text">Over 1,000,000 visits a month to John Bryce Zoo<br>Our experts know exactly what YOU
+                want</p>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="images/JB.jpeg" height = "45px;" width = "45px;" class="rounded me-2" alt="Company Logo">
+                <strong class="me-auto">John Bryce Finance Office</strong>
+                <small>Right Now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" style = "color: black;">
+                <h5>Please Consider Donating Via</h5> <button type="button" class="btn btn-info" onclick="DoAlert()">Donate </button>
+            </div>
         </div>
     </div>
 </body>
+<script>
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+
+
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+
+    toastBootstrap.show()
+
+
+    function DoAlert(){  
+        alert("Thank You For Your Donation.")
+        console.log("Donation Recieved From 84.244.515.23")
+        console.log("Just Kidding Its Not A Real IP Address")
+    } 
+
+</script>
 
 </html>
